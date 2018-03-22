@@ -111,7 +111,8 @@ NodeDashboardComponent = compose(
     options: {
       variables: {
         filter: {
-        }
+        },
+        limit: 25
       }
     }
   }),

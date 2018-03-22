@@ -55,11 +55,13 @@ mutation['updateNode'] = gql`
 query['nodes'] = gql`
 	query (
 		$filter: FilterFindManyNodesInput
+		$limit: Int
 	) {
 		viewer {
 			node {
 				many (
 					filter: $filter
+					limit: $limit
 					sort: _ID_DESC
 				) {
 					_id
