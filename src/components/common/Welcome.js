@@ -30,7 +30,7 @@ class WelcomeComponent extends Component {
 
 
                 <h3 className="title is-3">
-                  Collaboratively-built Smart Assistant 
+                  Decentralized Smart Assistant 
                   <br />
                   for Data Privacy Advocates 
                 </h3>
@@ -41,7 +41,7 @@ class WelcomeComponent extends Component {
                 <br />
 
                 <h3 className="subtitle is-5">
-                  If you care about data privacy, this is a flexible platform to own your identity,  <br /> protect your data,
+                  Own your identity, protect your data, <br />
                   connect to anything, and take control over your UX 
                 </h3>
 
