@@ -4,13 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "concurrently \"npm run app:dev\" \"npm run css:watch\"",
-    "build": "npm run css:build && npm run app:build && rimraf ../language_server/public && cp -R build/ ../language_server/public",
+    "build-old": "npm run css:build && npm run app:build && rimraf ../language_server/public && cp -R build/ ../language_server/public",
     "css:build": "node-sass-chokidar --include-path ./scss --include-path ./node_modules scss/main.scss public/css/main.css",
     "css:watch": "nodemon -e scss -x \"npm run css:build\"",
     "app:dev": "node scripts/start.js",
     "app:build": "node scripts/build.js",
     "app:test": "node scripts/test.js --env=jsdom",
-    "heroku-postbuild": "npm run app:build",
+    "heroku-postbuild": "npm run css:build && npm run app:build",
     "heroku": "./node_modules/.bin/http-server ./build -p $PORT -f ./build/index.html"
   },
   "proxy": "http://localhost:7011",

@@ -161,7 +161,7 @@ ipfs.on('ready', async () => {
 
 const httpLink = new HttpLink({ 
   uri: (process.env.REACT_APP_API_ADDRESS || 'https://api.getasecond.com') + '/graphql',
-  credentials: 'include',
+  // credentials: 'include',
 });
 
 
