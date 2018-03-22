@@ -1,0 +1,76 @@
+
+// @import 'codemirror/lib/codemirror.css';
+// @import 'codemirror/theme/material.css';
+
+@import "bulma/sass/utilities/initial-variables";
+
+// set custom bulma variables here
+
+@import "bulma/bulma.sass";
+
+@import "./react-table";
+
+
+
+.column.min-width {
+	min-width: 0;
+}
+
+
+
+// Emoji bar
+
+.pointer-list {
+
+	.emoji-bar {
+		border-top: 1px solid #eee;
+		border-bottom: 1px solid #eee;
+
+		.emoji-item {
+
+			cursor: pointer;
+
+			display: inline-block;
+			line-height: 34px;
+
+			border-right: 1px solid #eee;
+			padding: 0 12px;
+
+
+			.emoji-count {
+				padding-left: 4px;
+			}
+		}
+
+	}
+
+	.tag-bar {
+		border-bottom: 1px solid #eee;
+
+		.tag-groups {
+
+			padding: 6px 12px;
+
+			.tag {
+				cursor: pointer;
+			}
+			
+		}
+	}
+
+	.add-metadata {
+		padding: 8px;
+	}
+}
+
+
+// import geenric css here
+// - should keep css inside React components...
+
+.truncate {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
