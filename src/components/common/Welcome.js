@@ -23,7 +23,7 @@ class WelcomeComponent extends Component {
   render() {
 
     return [
-      <section key={1} className="hero is-medium">
+      <section key={1} className="hero is-medium2">
         <div className="hero-body">
           <div className="container has-text-centered">
             <div className="columns is-vcentered">
