@@ -81,6 +81,7 @@
     "react-table": "^6.7.4",
     "react-toastify": "^3.2.1",
     "react-treebeard": "^2.1.0",
+    "react-youtube": "7.5.0",
     "recharts": "^1.0.0-beta.1",
     "stellar-sdk": "0.8.0",
     "style-loader": "0.19.0",

@@ -678,7 +678,7 @@ class LaunchComponent extends Component {
     let transaction = new StellarSdk.TransactionBuilder(sourceAccount)
     .addOperation(StellarSdk.Operation.createAccount({
       destination: pairTarget.publicKey(),
-      startingBalance: "3.0" // 2.5 is required, .5 extra 
+      startingBalance: "5.0" // 2.5 is required, 2.5 extra for manageData entries (allows for 4 entries? second, nodechain, ...) 
       // source: pair
     }))
 

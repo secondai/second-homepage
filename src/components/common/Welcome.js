@@ -8,6 +8,8 @@ import $ from 'jquery'
 
 import {withAuth} from '../common/Auth'
 
+import YouTube from 'react-youtube'
+
 
 class WelcomeComponent extends Component {
   constructor(props){
@@ -28,22 +30,75 @@ class WelcomeComponent extends Component {
 
               <div className="column is-offset-3 is-6 has-text-center">
 
-
-                <h3 className="title is-3">
-                  Decentralized Smart Assistant 
-                  <br />
-                  for Data Privacy Advocates 
+                <h3 className="title is-1">
+                  Second
                 </h3>
-                {/*<h3 className="subtitle is-6">
-                  <i>"when X do Y with Z"</i>
-                </h3>*/}
 
                 <br />
 
                 <h3 className="subtitle is-5">
-                  Own your identity, protect your data, <br />
-                  connect to anything, and take control over your UX 
+                  Own your <span style={{fontWeight:'bold'}}>identity</span>, 
+                  <br />
+                  protect and share your <span style={{fontWeight:'bold'}}>data</span>, 
+                  <br />
+                  and take control over your <span style={{fontWeight:'bold'}}>UX</span>. 
                 </h3>
+
+                <br />
+
+              </div>
+            </div>
+
+            <div className="columns is-vcentered">
+
+              <div className="column is-6 has-text-center">
+
+
+                <YouTube
+                  videoId="RVRCsuoHmak"
+                  opts={{
+                    height: '315',
+                    width: '560',
+                    playerVars: {
+                      allowfullscreen: 1,
+                      showinfo: 0
+                    }
+                  }}
+                />
+
+                <h3 className="subtitle is-6">
+                  Technical Overview Video
+                </h3>
+
+
+              </div>
+
+              <div className="column is-6 has-text-center">
+
+
+                <YouTube
+                  videoId="RVRCsuoHmak"
+                  opts={{
+                    height: '315',
+                    width: '560',
+                    playerVars: {
+                      allowfullscreen: 1,
+                      showinfo: 0
+                    }
+                  }}
+                />
+
+                <h3 className="subtitle is-6">
+                  Second Walkthrough 
+                </h3>
+
+
+              </div>
+            </div>
+
+            <div className="columns is-vcentered">
+
+              <div className="column is-offset-3 is-6 has-text-center">
 
                 <br />
 
@@ -157,7 +212,7 @@ class WelcomeComponent extends Component {
 
 
                 <h3 className="title is-4">
-                  1. Setup Cloud Environment 
+                  1. Setup Cloud Second  
                 </h3>
                 <h3 className="subtitle is-6">
                   Choose a username and deploy instantly to Heroku, DO, AWS, or your own infrastructure 
@@ -166,7 +221,7 @@ class WelcomeComponent extends Component {
                 <br />
 
                 <h3 className="title is-4">
-                  2. Run Browser Management App 
+                  2. Connect from Browser App 
                 </h3>
                 <h3 className="subtitle is-6">
                   Connect to your Cloud Second using your username to view data and capabilities
@@ -178,7 +233,7 @@ class WelcomeComponent extends Component {
                   3. Collaborate 
                 </h3>
                 <h3 className="subtitle is-6">
-                  Update your local data from the Node Chain, and share your improved Code Nodes and new capabilities 
+                  Update your local data from the NodeChain, and share your improved Code Nodes and new capabilities 
                 </h3>
 
 
