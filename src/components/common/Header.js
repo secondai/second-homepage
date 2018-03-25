@@ -30,10 +30,10 @@ class HeaderComponent extends Component {
     // })
 
 
-    links.push({
-      to: '/nodes',
-      text: 'NodeChain'
-    })
+    // links.push({
+    //   to: '/nodes',
+    //   text: 'NodeChain'
+    // })
 
 
     // links.push({
