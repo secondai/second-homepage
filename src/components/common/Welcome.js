@@ -89,9 +89,8 @@ class WelcomeComponent extends Component {
                 />
 
                 <h3 className="subtitle is-6">
-                  Second Walkthrough 
+                  Second v0.1 Walkthrough 
                 </h3>
-
 
               </div>
             </div>
