@@ -99,11 +99,13 @@ class WelcomeComponent extends Component {
 
               <div className="column is-offset-3 is-6 has-text-center">
 
+                {/*
                 <br />
-
+                
                 <p className="">
                   <Link to="/" className="button is-primary">Setup my Cloud Second</Link>
                 </p>
+                */}
 
 
               </div>
@@ -242,10 +244,11 @@ class WelcomeComponent extends Component {
 
             <br />
 
+            {/*
             <p className="has-text-centered">
               <Link to="/cloud" className="button is-primary">Setup my Cloud Second</Link>
             </p>
-
+            */}
 
           </div>
         </div>
