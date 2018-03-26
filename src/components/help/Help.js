@@ -30,8 +30,54 @@ class HelpComponent extends Component {
               <div className="content">
 
                 <h3>
-                  Contact
+                  Contribute
                 </h3>
+                <p className="content">
+                  Second is alpha-quality software. Programmers are needed for improvements to: 
+                  <ul>
+                    <li>
+                      Security (web of trust needs mapping) 
+                    </li>
+                    <li>
+                      Scalability (leaks memory)
+                    </li>
+                    <li>
+                      Collaboration (easier packaging and distribution, better tooling)
+                    </li>
+                  </ul>
+                </p>
+
+                <p className="content">
+                  Additional improvements needed or apps to be built: 
+                  <ul>
+                    <li>
+                      OAuth with your Second (similar to OpenID) 
+                    </li>
+                    <li>
+                      Browser that replaces domain names with usernames 
+                    </li>
+                    <li>
+                      Dockerized for easier deployment 
+                    </li>
+                    <li>
+                      Additional hosting targets (AWS, GCloud, etc.) 
+                    </li>
+                    <li>
+                      NodeChain API needs permissions and management (just a PoC) 
+                    </li>
+                    <li>
+                      Create dev template for new data types: Create, View Single, View Multiple, Edit
+                    </li>
+                    <li>
+                      Assistant needs development pipeline for adding new contexts/inputs/actions
+                    </li>
+                  </ul>
+                </p>
+
+                <p className="content">
+                  Start by visiting the <a href="https://github.com/secondai/welcome">Second GitHub organization home</a>. 
+                  <br />Contact Nick if you have questions, or try <a href="https://reddit.com/r/programming">reddit.com/r/programming</a>. 
+                </p>
 
 
                 <br />
@@ -42,6 +88,9 @@ class HelpComponent extends Component {
                 <p>
                   Initial Release March 2018. Copyright Nicholas Reed. 
                 </p>
+                <p>
+                  Icon created by iconomania from Noun Project
+                </p>
 
                 <br />
 
@@ -51,7 +100,7 @@ class HelpComponent extends Component {
 
             </div>
 
-            <div className="column is-6">
+            <div className="column is-4">
 
 
             </div>

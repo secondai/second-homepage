@@ -841,9 +841,13 @@ class LaunchComponent extends Component {
 
 
     console.log('launching in new window!', url.toString());
-    return false;
+    // return false;
 
     window.open(url.toString());
+
+    this.setState({
+      launchUrl: url.toString()
+    });
 
   }
 
@@ -1086,6 +1090,14 @@ class LaunchComponent extends Component {
                       <button className={"button is-info"} onClick={this.launch}>{!this.state.usernameClaimed ? 'Claim Username and ':''}Continue to Heroku</button>
                     </div>
                 }
+
+                {
+                  !this.state.launchUrl ? '':
+                  <p>
+                    <a href={this.state.launchUrl}>{this.state.launchUrl}</a>
+                  </p>
+                }
+
 
               </div>
 

@@ -225,7 +225,7 @@ class WelcomeComponent extends Component {
                   2. Connect from Browser App 
                 </h3>
                 <h3 className="subtitle is-6">
-                  Connect to your Cloud Second using your username to view data and capabilities
+                  Connect to your Cloud Second to view data and capabilities
                 </h3>
 
                 <br />
@@ -244,11 +244,11 @@ class WelcomeComponent extends Component {
 
             <br />
 
-            {/*
             <p className="has-text-centered">
-              <Link to="/cloud" className="button is-primary">Setup my Cloud Second</Link>
+              <Link to="/about" className="button is-info">Contribute</Link>
+              &nbsp;
+              <Link to="/cloud" className="button is-primary">Setup Cloud Second (v0.1 alpha)</Link>
             </p>
-            */}
 
           </div>
         </div>
