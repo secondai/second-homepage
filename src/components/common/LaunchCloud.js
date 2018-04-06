@@ -32,7 +32,7 @@ class LaunchComponent extends Component {
       username: '',
       passphrase: '',
       confirmPassphrase: '',
-      startupZipUrl: 'https://github.com/secondai/bundle_cloud_smart_assistant_default',
+      startupZipUrl: 'https://github.com/secondai/cloud_appstore', // bundle_cloud_smart_assistant_default
       generatingLumens: false,
       lumensMessage: null,
       errorMessages: [],
@@ -1122,7 +1122,7 @@ class LaunchComponent extends Component {
                 After creating, visit the <a href="https://browserapp.getasecond.com">browser app</a>* to connect to your Cloud Second using your created username and password
                 <br />
                 <small>
-                  * eventually your Second will host the app
+                  * eventually your Second will host the environment 
                 </small>
               </p>
 

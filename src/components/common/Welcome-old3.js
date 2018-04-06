@@ -34,8 +34,14 @@ class WelcomeComponent extends Component {
                   Second
                 </h3>
 
-                <h3 className="subtitle is-3">
-                  Personal App Store and Hosting Platform
+                <br />
+
+                <h3 className="subtitle is-5">
+                  Own your <span style={{fontWeight:'bold'}}>identity</span>, 
+                  <br />
+                  protect and share your <span style={{fontWeight:'bold'}}>data</span>, 
+                  <br />
+                  and take control over your <span style={{fontWeight:'bold'}}>UX</span>. 
                 </h3>
 
                 <br />
@@ -45,7 +51,30 @@ class WelcomeComponent extends Component {
 
             <div className="columns is-vcentered">
 
-              <div className="column is-12 has-text-center">
+              <div className="column is-6 has-text-center">
+
+
+                <YouTube
+                  videoId="RVRCsuoHmak"
+                  opts={{
+                    height: '315',
+                    width: '560',
+                    playerVars: {
+                      allowfullscreen: 1,
+                      showinfo: 0
+                    }
+                  }}
+                />
+
+                <h3 className="subtitle is-6">
+                  Technical Overview Video
+                </h3>
+
+
+              </div>
+
+              <div className="column is-6 has-text-center">
+
 
                 <YouTube
                   videoId="w4SUaWFHoog"
@@ -58,6 +87,10 @@ class WelcomeComponent extends Component {
                     }
                   }}
                 />
+
+                <h3 className="subtitle is-6">
+                  Second v0.1 Walkthrough 
+                </h3>
 
               </div>
             </div>
@@ -101,14 +134,14 @@ class WelcomeComponent extends Component {
             <div className="column is-4">
 
               <h3 className="title is-4">
-                Build Apps Fast, Distribute Instantly 
+                Personal Data
               </h3>
 
 
               <div className="content has-text-left">
 
                 <p>
-                  Connect to any Second to clone an app, then make changes, and instantly distribute the updated app from your own store. 
+                  Second has a simple system of storing and fetching information, and providing permissions for how other Seconds can access your data. 
                 </p>
 
               </div>
@@ -118,13 +151,13 @@ class WelcomeComponent extends Component {
             <div className="column is-4">
 
               <h3 className="title is-4">
-                Personalized UIs Everywhere
+                Connections
               </h3>
 
               <div className="content has-text-left">
 
                 <p>
-                  Every UI is run through your App Store, so you can easily modify any interfaces to fit your exact needs. This works for browsers, mobile, IoT devices, etc. 
+                  Each Second has a unique username that is stored on the Stellar platform, and can discover and communicate with other Seconds. Different actions and data are available based on permissions you setup. 
                 </p>
 
               </div>
@@ -134,13 +167,13 @@ class WelcomeComponent extends Component {
             <div className="column is-4">
 
               <h3 className="title is-4">
-                Own and Control Everything
+                Custom UX 
               </h3>
 
               <div className="content has-text-left">
 
                 <p>
-                  From your username to where you host your Second and all your data, Second has a user-first architecture that is built on decentralization technologies like the blockchain and IPFS. 
+                  Launch a custom Browser Second for managing your remote Second, or create single-purpose apps (for browser or mobile) that have limited permissions and also talk to your Second. For example: you can have a custom Android app for displaying lists of information. 
                 </p>
 
               </div>
@@ -178,8 +211,9 @@ class WelcomeComponent extends Component {
 
               <div className="column is-offset-4 is-4 has-text-left">
 
+
                 <h3 className="title is-4">
-                  1. Setup your Second  
+                  1. Setup Cloud Second  
                 </h3>
                 <h3 className="subtitle is-6">
                   Choose a username and deploy instantly to Heroku, DO, AWS, or your own infrastructure 
@@ -188,11 +222,12 @@ class WelcomeComponent extends Component {
                 <br />
 
                 <h3 className="title is-4">
-                  2. Connect from Browser 
+                  2. Connect from Browser App 
                 </h3>
                 <h3 className="subtitle is-6">
-                  Connect to your Second to view/install/modify apps 
+                  Connect to your Cloud Second to view data and capabilities
                 </h3>
+
                 <br />
 
                 <h3 className="title is-4">
@@ -212,7 +247,7 @@ class WelcomeComponent extends Component {
             <p className="has-text-centered">
               <Link to="/about" className="button is-info">Contribute</Link>
               &nbsp;
-              <Link to="/cloud" className="button is-primary">Setup PoC Cloud Second</Link>
+              <Link to="/cloud" className="button is-primary">Setup Cloud Second (v0.1 alpha)</Link>
             </p>
 
           </div>
