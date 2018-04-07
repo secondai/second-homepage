@@ -35,8 +35,9 @@ class WelcomeComponent extends Component {
                 </h3>
 
                 <h3 className="subtitle is-3">
-                  Personal App Store and Hosting Platform
+                  Easily Build and Share Simple Apps
                 </h3>
+                  
 
                 <br />
 
@@ -101,14 +102,14 @@ class WelcomeComponent extends Component {
             <div className="column is-4">
 
               <h3 className="title is-4">
-                Build Apps Fast, Distribute Instantly 
+                Build Fast, Distribute Instantly 
               </h3>
 
 
               <div className="content has-text-left">
 
                 <p>
-                  Connect to any Second to clone an app, then make changes, and instantly distribute the updated app from your own store. 
+                  Quickly clone an app from a friend or a shared App Store, make changes, and distribute the updated app from your own App Store. 
                 </p>
 
               </div>
@@ -124,7 +125,7 @@ class WelcomeComponent extends Component {
               <div className="content has-text-left">
 
                 <p>
-                  Every UI is run through your App Store, so you can easily modify any interfaces to fit your exact needs. This works for browsers, mobile, IoT devices, etc. 
+                  Modify any interface to fit your exact needs depending on the platform (browser, mobile phones, smart speakers, etc.). 
                 </p>
 
               </div>
@@ -140,7 +141,7 @@ class WelcomeComponent extends Component {
               <div className="content has-text-left">
 
                 <p>
-                  From your username to where you host your Second and all your data, Second has a user-first architecture that is built on decentralization technologies like the blockchain and IPFS. 
+                  From your username to where you host all your data, Second's user-owned architecture is built on tech like the blockchain and IPFS. 
                 </p>
 
               </div>
@@ -150,7 +151,27 @@ class WelcomeComponent extends Component {
         </div>
       </section>
       ,
-      <section key={3} className="hero is-medium is-default is-bold">
+
+      <section key={3} className="hero is-medium">
+        <div className="hero-body">
+          <div className="container has-text-centered">
+            <div className="columns is-vcentered">
+
+              <div className="column is-offset-2 is-8 has-text-center">
+
+                <h3 className="subtitle is-3">
+                  Second is your Personal App and Data Store in the cloud. 
+                </h3>
+                  
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+      ,
+      <section key={4} className="hero is-small is-default is-bold">
         <div className="hero-body">
           <div className="container has-text-centered">
             <div className="columns is-vcentered">
@@ -230,7 +251,7 @@ class WelcomeComponent extends Component {
         </div>
         */}
       </section>,
-      <footer key={4} className="footer">
+      <footer key={'footer'} className="footer">
         <div className="container">
           <div className="content has-text-centered">
             <p>
