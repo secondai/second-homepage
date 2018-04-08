@@ -52,7 +52,7 @@ class LaunchComponent extends Component {
           network: 'test'
         }
       ],
-      horizonServerAddress: 1 // public or test
+      horizonServerAddress: 0 // public or test
     }
   }
   componentDidMount(){
@@ -793,11 +793,11 @@ class LaunchComponent extends Component {
   @autobind
   async launch(){
 
-    // // check passwords
-    // if(this.state.passphrase != this.state.confirmPassphrase){
-    //   alert('Passwords do not match');
-    //   return false;
-    // }
+    // check passwords
+    if(this.state.passphrase != this.state.confirmPassphrase){
+      alert('Passwords do not match');
+      return false;
+    }
 
     // Claim the username if necessary 
     if(this.state.usernameClaimed){
@@ -885,16 +885,93 @@ class LaunchComponent extends Component {
               </div>
 
               <h3 className="title is-3">
-                Launch New Second 
-              </h3>
-              <h3 className="subtitle is-6">
-                With default App Store (Stellar test network) (<Link to="/cloud-advanced">advanced</Link>)
+                Advanced: Launch Second 
               </h3>
 
+              <p>
+                Configure all the options for launching your cloud Second 
+              </p>
 
               <hr />
 
 
+              <div className="field">
+                <label className="label">Identity (username/namespace/domain)</label>
+              </div>
+
+              <div className="field has-addons" style={{marginBottom:'0px'}}>
+                <div className="control is-expanded">
+                  <input autoFocus className="input" type="text" placeholder="lowercase values only" value={this.state.username} 
+                    onChange={this.updateUsername} 
+                    onKeyPress={(event) => {
+                      if (event.key === "Enter") {
+                        this.validate()
+                      }
+                    }}
+                    />
+                </div>
+                
+                {
+                  !this.state.usernameAvailable ? '':
+                  <div className="control">
+                    <button className={"button is-success " + (this.state.claiming ? 'is-loading':'') } onClick={e=>this.claimUsername(this.state.username)}>Claim Immediately</button>
+                  </div>
+                }
+
+                <div className="control">
+                  <button className={"button is-info " + (this.state.validating ? 'is-loading':'') } onClick={this.validate}>Check Username</button>
+                </div>
+
+              </div>
+
+              <div className="field">
+
+                <p className="help">
+                  This is what you'll give out when you want someone to connect to your Second, or to a website that you own. It is globally unique. 
+                  <br />
+                  Normalized using <a href="http://www.unicode.org/reports/tr36/#Recommendations_General" target="_blank">Unicode Technical Report 36</a> (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize" target="_blank">String.prototype.normalize('NFKC').toLowerCase()</a>)
+                </p>
+
+                {
+                  !this.state.usernameAvailable ? '':
+                  <p className={"help has-text-success"}>
+                    Username available (unregistered)
+                  </p>
+                }
+
+                {
+                  !this.state.identityAccountId ? '':
+                  <p className="help">
+                    Account: <a href={`${this.state.horizonPossible[this.state.horizonServerAddress].address}/accounts/${this.state.identityAccountId}`} target="_blank">{this.state.identityAccountId}</a>
+                  </p>
+                }
+                {
+                  !this.state.usernameClaimed ? '':
+                  <p className={"help " + (this.state.usernameClaimed.owned ? 'has-text-success':'has-text-danger')}>
+                    Current Second Hash:&nbsp;
+                    {
+                      this.state.usernameClaimed.hash ?
+                        <a href={`https://ipfs.io/ipfs/${this.state.usernameClaimed.hash}`} target="_blank">{this.state.usernameClaimed.hash}</a>
+                      :
+                        <i>missing</i>
+                    }
+                    &nbsp;
+                    (<a href="/">view all identity records</a>)
+                    <br />
+                    {
+                      this.state.usernameClaimed.owned ?
+                      'You are the owner already! Continuing will eventually overwrite the previous configuration for this username'
+                      :
+                      <div>
+                        You are NOT the owner of this username
+                        <br />
+                        <strong className="has-text-danger">This username is available for rent/purchase (<a href="/">view</a>)</strong>
+                      </div>
+                    }
+                  </p>
+                }
+
+              </div>
 
 
               <div className="field">
@@ -943,75 +1020,11 @@ class LaunchComponent extends Component {
                   </p>
                 }
                 <p className="help">
-                  Lumens Required: "5.0" [<a onClick={this.generateStellarSeed}>generate seed</a>]
+                  This must be an account with enough Lumens to create a new account (3.0). <a onClick={this.generateStellarSeed}>generate seed</a> (funds on testnet)
+                  <br />
+                  Losing this Seed value means losing ALL access to your username. There is no recovery mechanism, and no amount of money you can pay to get it back. Store it somewhere secure. 
                 </p>
               </div>
-
-
-                <br />
-
-
-              <div className="field">
-                <label className="label">Username</label>
-              </div>
-
-              <div className="field has-addons" style={{marginBottom:'0px'}}>
-                <div className="control is-expanded">
-                  <input autoFocus className="input" type="text" placeholder="lowercase values only" value={this.state.username} 
-                    onChange={this.updateUsername} 
-                    onKeyPress={(event) => {
-                      if (event.key === "Enter") {
-                        this.validate()
-                      }
-                    }}
-                    />
-                </div>
-                
-                {
-                  !this.state.usernameAvailable ? '':
-                  <div className="control">
-                    <button className={"button is-success " + (this.state.claiming ? 'is-loading':'') } onClick={e=>this.claimUsername(this.state.username)}>Claim Immediately</button>
-                  </div>
-                }
-
-                <div className="control">
-                  <button className={"button is-info " + (this.state.validating ? 'is-loading':'') } onClick={this.validate}>Check Username</button>
-                </div>
-
-              </div>
-
-              <div className="field">
-
-                {
-                  !this.state.usernameAvailable ? '':
-                  <p className={"help has-text-success"}>
-                    Username Available!
-                  </p>
-                }
-
-                {/*
-                  !this.state.identityAccountId ? '':
-                  <p className="help">
-                    Account: <a href={`${this.state.horizonPossible[this.state.horizonServerAddress].address}/accounts/${this.state.identityAccountId}`} target="_blank">{this.state.identityAccountId}</a>
-                  </p>
-                */}
-                {
-                  !this.state.usernameClaimed ? '':
-                  <p className={"help " + (this.state.usernameClaimed.owned ? 'has-text-success':'has-text-danger')}>
-                    {
-                      this.state.usernameClaimed.owned ?
-                      'You are the owner already! Continuing will eventually overwrite the previous configuration for this username'
-                      :
-                      <div>
-                        You are NOT the owner of this username
-                      </div>
-                    }
-                  </p>
-                }
-
-              </div>
-
-              <br />
 
 
               <div className="field">
@@ -1019,15 +1032,34 @@ class LaunchComponent extends Component {
                 <div className="control">
                   <input className="input" type="password" placeholder="" value={this.state.passphrase} onChange={e=>this.setState({passphrase: e.target.value})} />
                 </div>
-                {/*
                 <p className="help">
                   This is the passphrase you'll use for full and complete access (you'll add additional users/permissions later) 
                 </p>
-                */}
+              </div>
+
+              <div className="field">
+                <label className="label">Confirm Admin Passphrase</label>
+                <div className="control">
+                  <input className="input" type="password" placeholder="" value={this.state.confirmPassphrase} onChange={e=>this.setState({confirmPassphrase: e.target.value})} />
+                </div>
               </div>
 
 
-              {/*
+              <div className="field">
+                <label className="label">Network</label>
+                {
+                  this.state.horizonPossible.map((horizon,i)=>(
+                    <div key={i} className="control">
+                      <label className="radio">
+                        <input type="radio" name="answer" value={i} onChange={e=>this.setState({horizonServerAddress: e.target.value})} checked={(this.state.horizonServerAddress == i)} />
+                        &nbsp;{horizon.name}
+                      </label>
+                    </div>
+                  ))
+                }
+              </div>
+
+
               <div className="field">
                 <label className="label">Startup Bundle Zip URL</label>
                 <div className="control">
@@ -1037,7 +1069,6 @@ class LaunchComponent extends Component {
                   The default bundle of Nodes to use when launching a Cloud Second
                 </p>
               </div>
-              */}
 
 
               <br />
@@ -1059,7 +1090,6 @@ class LaunchComponent extends Component {
                       <button className={"button is-info"} onClick={this.launch}>{!this.state.usernameClaimed ? 'Claim Username and ':''}Continue to Heroku</button>
                     </div>
                 }
-
               </div>
               {
                 !this.state.launchUrl ? '':
@@ -1067,6 +1097,7 @@ class LaunchComponent extends Component {
                   <a href={this.state.launchUrl}>{this.state.launchUrl}</a>
                 </p>
               }
+
 
               {
                 !this.state.errorMessages.length ? '':
