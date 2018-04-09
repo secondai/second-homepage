@@ -918,9 +918,11 @@ class LaunchComponent extends Component {
                   }</button>
                 </div>
 
+                {/*
                 <div className="control">
                   <button className={"button is-default"} onClick={e=>this.setState({showBuy:true})}>No Lumens? Buy Some!</button>
                 </div>
+                */}
                 
               </div>
 
