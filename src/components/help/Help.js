@@ -8,6 +8,10 @@ import $ from 'jquery'
 
 import {withAuth} from '../common/Auth'
 
+import YouTube from 'react-youtube'
+
+const ReactMarkdown = require('react-markdown')
+
 
 class HelpComponent extends Component {
   constructor(props){
@@ -20,96 +24,40 @@ class HelpComponent extends Component {
 
   render() {
 
+    let md1 = `
+
+
+### Team 
+
+We're a small team with great advisors, based in San Francisco. 
+
+
+### History 
+
+Nick began working on the idea for Second in 2013. In early 2018 alpha software was released with the core concepts and fundamentals (identity, language, hosting). 
+
+
+### Contact 
+
+Requests may be directed to nicholas.a.reed at gmail 
+
+
+---- 
+
+Icon created by iconomania from Noun Project
+
+    `
+
+
     return (
-      <div className="section">
-        <div className="container">
-
-          <div className="columns">
-            <div className="column">
-
-              <div className="content">
-
-                <h3>
-                  Contribute
-                </h3>
-                <p className="content">
-                  Second is alpha-quality software. Programmers are needed for improvements to: 
-                  <ul>
-                    <li>
-                      Security (web of trust needs mapping) 
-                    </li>
-                    <li>
-                      Scalability (leaks memory)
-                    </li>
-                    <li>
-                      Collaboration (easier packaging and distribution, better tooling)
-                    </li>
-                  </ul>
-                </p>
-
-                <p className="content">
-                  Additional improvements needed or apps to be built: 
-                  <ul>
-                    <li>
-                      OAuth with your Second (similar to OpenID) 
-                    </li>
-                    <li>
-                      Browser that replaces domain names with usernames 
-                    </li>
-                    <li>
-                      Dockerized for easier deployment 
-                    </li>
-                    <li>
-                      Additional hosting targets (AWS, GCloud, etc.) 
-                    </li>
-                    <li>
-                      NodeChain API needs permissions and management (just a PoC) 
-                    </li>
-                    <li>
-                      Create dev template for new data types: Create, View Single, View Multiple, Edit
-                    </li>
-                    <li>
-                      Assistant needs development pipeline for adding new contexts/inputs/actions
-                    </li>
-                  </ul>
-                </p>
-
-                <p className="content">
-                  Start by visiting the <a href="https://github.com/secondai/welcome">Second GitHub organization home</a>. 
-                  <br />Contact Nick if you have questions, or try <a href="https://reddit.com/r/programming">reddit.com/r/programming</a>. 
-                </p>
-
-
-                <br />
-
-                <h3>
-                  About Second
-                </h3>
-                <p>
-                  Initial Release March 2018. Copyright Nicholas Reed. 
-                </p>
-                <p>
-                  Icon created by iconomania from Noun Project
-                </p>
-
-                <br />
-
-              </div>
-
-
-
-            </div>
-
-            <div className="column is-4">
-
-
-            </div>
-          </div>
-
+      <div className="container">
+        <div className="content">
+          <ReactMarkdown source={md1} />
         </div>
-
       </div>
     )
+
+    
   }
 }
 

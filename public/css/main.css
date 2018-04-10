@@ -287,7 +287,7 @@ table th {
   .is-size-7-desktop {
     font-size: 0.75rem !important; } }
 
-@media screen and (min-width: 1216px) {
+@media screen and (min-width: 960) {
   .is-size-1-widescreen {
     font-size: 3rem !important; }
   .is-size-2-widescreen {
@@ -303,7 +303,7 @@ table th {
   .is-size-7-widescreen {
     font-size: 0.75rem !important; } }
 
-@media screen and (min-width: 1408px) {
+@media screen and (min-width: 960) {
   .is-size-1-fullhd {
     font-size: 3rem !important; }
   .is-size-2-fullhd {
@@ -342,19 +342,19 @@ table th {
   .has-text-centered-desktop {
     text-align: center !important; } }
 
-@media screen and (min-width: 1024px) and (max-width: 1215px) {
+@media screen and (min-width: 1024px) and (max-width: 959px) {
   .has-text-centered-desktop-only {
     text-align: center !important; } }
 
-@media screen and (min-width: 1216px) {
+@media screen and (min-width: 960) {
   .has-text-centered-widescreen {
     text-align: center !important; } }
 
-@media screen and (min-width: 1216px) and (max-width: 1407px) {
+@media screen and (min-width: 960) and (max-width: 959px) {
   .has-text-centered-widescreen-only {
     text-align: center !important; } }
 
-@media screen and (min-width: 1408px) {
+@media screen and (min-width: 960) {
   .has-text-centered-fullhd {
     text-align: center !important; } }
 
@@ -381,19 +381,19 @@ table th {
   .has-text-justified-desktop {
     text-align: justify !important; } }
 
-@media screen and (min-width: 1024px) and (max-width: 1215px) {
+@media screen and (min-width: 1024px) and (max-width: 959px) {
   .has-text-justified-desktop-only {
     text-align: justify !important; } }
 
-@media screen and (min-width: 1216px) {
+@media screen and (min-width: 960) {
   .has-text-justified-widescreen {
     text-align: justify !important; } }
 
-@media screen and (min-width: 1216px) and (max-width: 1407px) {
+@media screen and (min-width: 960) and (max-width: 959px) {
   .has-text-justified-widescreen-only {
     text-align: justify !important; } }
 
-@media screen and (min-width: 1408px) {
+@media screen and (min-width: 960) {
   .has-text-justified-fullhd {
     text-align: justify !important; } }
 
@@ -420,19 +420,19 @@ table th {
   .has-text-left-desktop {
     text-align: left !important; } }
 
-@media screen and (min-width: 1024px) and (max-width: 1215px) {
+@media screen and (min-width: 1024px) and (max-width: 959px) {
   .has-text-left-desktop-only {
     text-align: left !important; } }
 
-@media screen and (min-width: 1216px) {
+@media screen and (min-width: 960) {
   .has-text-left-widescreen {
     text-align: left !important; } }
 
-@media screen and (min-width: 1216px) and (max-width: 1407px) {
+@media screen and (min-width: 960) and (max-width: 959px) {
   .has-text-left-widescreen-only {
     text-align: left !important; } }
 
-@media screen and (min-width: 1408px) {
+@media screen and (min-width: 960) {
   .has-text-left-fullhd {
     text-align: left !important; } }
 
@@ -459,19 +459,19 @@ table th {
   .has-text-right-desktop {
     text-align: right !important; } }
 
-@media screen and (min-width: 1024px) and (max-width: 1215px) {
+@media screen and (min-width: 1024px) and (max-width: 959px) {
   .has-text-right-desktop-only {
     text-align: right !important; } }
 
-@media screen and (min-width: 1216px) {
+@media screen and (min-width: 960) {
   .has-text-right-widescreen {
     text-align: right !important; } }
 
-@media screen and (min-width: 1216px) and (max-width: 1407px) {
+@media screen and (min-width: 960) and (max-width: 959px) {
   .has-text-right-widescreen-only {
     text-align: right !important; } }
 
-@media screen and (min-width: 1408px) {
+@media screen and (min-width: 960) {
   .has-text-right-fullhd {
     text-align: right !important; } }
 
@@ -606,19 +606,19 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   .is-block-desktop {
     display: block !important; } }
 
-@media screen and (min-width: 1024px) and (max-width: 1215px) {
+@media screen and (min-width: 1024px) and (max-width: 959px) {
   .is-block-desktop-only {
     display: block !important; } }
 
-@media screen and (min-width: 1216px) {
+@media screen and (min-width: 960) {
   .is-block-widescreen {
     display: block !important; } }
 
-@media screen and (min-width: 1216px) and (max-width: 1407px) {
+@media screen and (min-width: 960) and (max-width: 959px) {
   .is-block-widescreen-only {
     display: block !important; } }
 
-@media screen and (min-width: 1408px) {
+@media screen and (min-width: 960) {
   .is-block-fullhd {
     display: block !important; } }
 
@@ -645,19 +645,19 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   .is-flex-desktop {
     display: flex !important; } }
 
-@media screen and (min-width: 1024px) and (max-width: 1215px) {
+@media screen and (min-width: 1024px) and (max-width: 959px) {
   .is-flex-desktop-only {
     display: flex !important; } }
 
-@media screen and (min-width: 1216px) {
+@media screen and (min-width: 960) {
   .is-flex-widescreen {
     display: flex !important; } }
 
-@media screen and (min-width: 1216px) and (max-width: 1407px) {
+@media screen and (min-width: 960) and (max-width: 959px) {
   .is-flex-widescreen-only {
     display: flex !important; } }
 
-@media screen and (min-width: 1408px) {
+@media screen and (min-width: 960) {
   .is-flex-fullhd {
     display: flex !important; } }
 
@@ -684,19 +684,19 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   .is-inline-desktop {
     display: inline !important; } }
 
-@media screen and (min-width: 1024px) and (max-width: 1215px) {
+@media screen and (min-width: 1024px) and (max-width: 959px) {
   .is-inline-desktop-only {
     display: inline !important; } }
 
-@media screen and (min-width: 1216px) {
+@media screen and (min-width: 960) {
   .is-inline-widescreen {
     display: inline !important; } }
 
-@media screen and (min-width: 1216px) and (max-width: 1407px) {
+@media screen and (min-width: 960) and (max-width: 959px) {
   .is-inline-widescreen-only {
     display: inline !important; } }
 
-@media screen and (min-width: 1408px) {
+@media screen and (min-width: 960) {
   .is-inline-fullhd {
     display: inline !important; } }
 
@@ -723,19 +723,19 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   .is-inline-block-desktop {
     display: inline-block !important; } }
 
-@media screen and (min-width: 1024px) and (max-width: 1215px) {
+@media screen and (min-width: 1024px) and (max-width: 959px) {
   .is-inline-block-desktop-only {
     display: inline-block !important; } }
 
-@media screen and (min-width: 1216px) {
+@media screen and (min-width: 960) {
   .is-inline-block-widescreen {
     display: inline-block !important; } }
 
-@media screen and (min-width: 1216px) and (max-width: 1407px) {
+@media screen and (min-width: 960) and (max-width: 959px) {
   .is-inline-block-widescreen-only {
     display: inline-block !important; } }
 
-@media screen and (min-width: 1408px) {
+@media screen and (min-width: 960) {
   .is-inline-block-fullhd {
     display: inline-block !important; } }
 
@@ -762,19 +762,19 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   .is-inline-flex-desktop {
     display: inline-flex !important; } }
 
-@media screen and (min-width: 1024px) and (max-width: 1215px) {
+@media screen and (min-width: 1024px) and (max-width: 959px) {
   .is-inline-flex-desktop-only {
     display: inline-flex !important; } }
 
-@media screen and (min-width: 1216px) {
+@media screen and (min-width: 960) {
   .is-inline-flex-widescreen {
     display: inline-flex !important; } }
 
-@media screen and (min-width: 1216px) and (max-width: 1407px) {
+@media screen and (min-width: 960) and (max-width: 959px) {
   .is-inline-flex-widescreen-only {
     display: inline-flex !important; } }
 
-@media screen and (min-width: 1408px) {
+@media screen and (min-width: 960) {
   .is-inline-flex-fullhd {
     display: inline-flex !important; } }
 
@@ -801,19 +801,19 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   .is-hidden-desktop {
     display: none !important; } }
 
-@media screen and (min-width: 1024px) and (max-width: 1215px) {
+@media screen and (min-width: 1024px) and (max-width: 959px) {
   .is-hidden-desktop-only {
     display: none !important; } }
 
-@media screen and (min-width: 1216px) {
+@media screen and (min-width: 960) {
   .is-hidden-widescreen {
     display: none !important; } }
 
-@media screen and (min-width: 1216px) and (max-width: 1407px) {
+@media screen and (min-width: 960) and (max-width: 959px) {
   .is-hidden-widescreen-only {
     display: none !important; } }
 
-@media screen and (min-width: 1408px) {
+@media screen and (min-width: 960) {
   .is-hidden-fullhd {
     display: none !important; } }
 
@@ -1580,22 +1580,22 @@ a.box:active {
         margin-right: 32px;
         max-width: none;
         width: auto; } }
-  @media screen and (max-width: 1215px) {
+  @media screen and (max-width: 959px) {
     .container.is-widescreen {
-      max-width: 1152px;
+      max-width: 896px;
       width: auto; } }
-  @media screen and (max-width: 1407px) {
+  @media screen and (max-width: 959px) {
     .container.is-fullhd {
-      max-width: 1344px;
+      max-width: 896px;
       width: auto; } }
-  @media screen and (min-width: 1216px) {
+  @media screen and (min-width: 960) {
     .container {
-      max-width: 1152px;
-      width: 1152px; } }
-  @media screen and (min-width: 1408px) {
+      max-width: 896px;
+      width: 896px; } }
+  @media screen and (min-width: 960) {
     .container {
-      max-width: 1344px;
-      width: 1344px; } }
+      max-width: 896px;
+      width: 896px; } }
 
 .content:not(:last-child) {
   margin-bottom: 1.5rem; }
@@ -5302,7 +5302,7 @@ label.panel-block {
       width: 100%; }
     .column.is-offset-12-desktop {
       margin-left: 100%; } }
-  @media screen and (min-width: 1216px) {
+  @media screen and (min-width: 960) {
     .column.is-narrow-widescreen {
       flex: none; }
     .column.is-full-widescreen {
@@ -5393,7 +5393,7 @@ label.panel-block {
       width: 100%; }
     .column.is-offset-12-widescreen {
       margin-left: 100%; } }
-  @media screen and (min-width: 1408px) {
+  @media screen and (min-width: 960) {
     .column.is-narrow-fullhd {
       flex: none; }
     .column.is-full-fullhd {

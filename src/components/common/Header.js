@@ -52,9 +52,15 @@ class HeaderComponent extends Component {
     // })
 
     links.push({
+      to: '/',
+      text: 'Home'
+    })
+
+    links.push({
       to: '/about',
       text: 'About'
     })
+
 
     // links.push({
     //   to: '/identity',
@@ -65,66 +71,19 @@ class HeaderComponent extends Component {
 
 
     return (
-      <nav className="navbar is-transparent">
-        <div className="navbar-brand">
-          <a className="navbar-item" href="/">
-            <strong>Second</strong>
-          </a>
-
-          <div className="navbar-burger burger" data-target="navMenuTransparentExample" onClick={e=>this.setState({menuActive:!this.state.menuActive})}>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+      <div className="container">
+        <br />
+        <div className="links">
+          {
+            links.map((link,i)=>(
+              <Link className="" to={link.to} key={i}>
+                {link.text}
+              </Link>
+            )).reduce((prev, curr) => [prev, ' | ', curr])
+          }
         </div>
-
-        <div id="navMenuTransparentExample" className={"navbar-menu " + (this.state.menuActive ? 'is-active':'')} onClick={e=>this.setState({menuActive:false})}>
-          <div className="navbar-start">
-            {
-              links.map((link,i)=>(
-                <Link className="navbar-item" to={link.to} key={i}>
-                  {link.text}
-                </Link>
-              ))
-            }
-          </div>
-
-
-          <div className="navbar-end">
-
-            {/*
-              user ? 
-                <div className="navbar-item has-dropdown is-hoverable">
-                  <a className="navbar-link">
-                    {user.username}
-                  </a>
-
-                  <div className="navbar-dropdown is-right">
-
-                    <Link to="/settings" className="navbar-item">
-                      Settings
-                    </Link>
-
-                    <div className="navbar-divider"></div>
-
-                    <a href={process.env.REACT_APP_LOGOUT_URL} className="navbar-item">
-                      Logout
-                    </a>
-
-
-                  </div>
-                </div>
-              :
-                <a className="navbar-item" href={process.env.REACT_APP_LOGIN_URL + '?return=' + window.location.href}>
-                  Login
-                </a>
-            */}
-
-
-          </div>
-
-        </div>
-      </nav>
+        <hr />
+      </div>
     )
   }
 };
