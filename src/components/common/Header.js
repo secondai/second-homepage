@@ -61,6 +61,11 @@ class HeaderComponent extends Component {
       text: 'About'
     })
 
+    links.push({
+      to: '/developers',
+      text: 'Developers'
+    })
+
 
     // links.push({
     //   to: '/identity',
@@ -79,7 +84,7 @@ class HeaderComponent extends Component {
               <Link className="" to={link.to} key={i}>
                 {link.text}
               </Link>
-            )).reduce((prev, curr) => [prev, ' | ', curr])
+            )).reduce((prev, curr, i) => [prev, <span key={i+10}>&nbsp;&nbsp;|&nbsp;&nbsp;</span>, curr])
           }
         </div>
         <hr />

@@ -10,8 +10,28 @@ import {withAuth} from '../common/Auth'
 
 import YouTube from 'react-youtube'
 
+const createElement = React.createElement
 const ReactMarkdown = require('react-markdown')
-
+function getCoreProps(props) {
+  return props['data-sourcepos'] ? {'data-sourcepos': props['data-sourcepos']} : {}
+}
+function Heading(props) {
+  // console.log('props', props);
+  let coreProps = getCoreProps(props);
+  if(props.level <= 4 && !coreProps.id && props.children && props.children.length){
+    coreProps.id = slugify(props.children[0].toString());
+  }
+  return createElement(`h${props.level}`, coreProps, props.children)
+}
+function slugify(string){
+  return string.toLowerCase()
+  .replace(/[^\w\s-]/g, '') // remove non-word [a-z0-9_], non-whitespace, non-hyphen characters
+  .replace(/[\s_-]+/g, '-') // swap any length of whitespace, underscore, hyphen characters with a single -
+  .replace(/^-+|-+$/g, ''); // remove leading, trailing -
+}
+let renderers = {
+  heading: Heading
+}
 
 class HelpComponent extends Component {
   constructor(props){
@@ -24,7 +44,61 @@ class HelpComponent extends Component {
 
   render() {
 
-    let md1 = `
+    let menu1 = `
+- [Technical Roadmap](#technical-roadmap)  
+- [Team](#team)  
+- [History](#history)  
+- [Contact](#contact)  
+
+    `;
+
+//     let md1 = `
+// ---- 
+// `;
+    let md2 = `
+
+### Technical Roadmap 
+
+
+The final goal of Second is to be a personalized, not awkward to use, AI for you or your business, acting as a middleman/negotiator/guardian whenever you want to view or exchange data. For example, if Sally wants to see messages sent from Bob, her Second would handle requesting messages from Bob's Second and displaying them in the list-like UI that Sally prefers. 
+
+In order to provide a non-awkward experience, the AI needs to know everything about you, and with that level of trust, you should be in complete control of the AI. This is the roadmap to building that AI. 
+
+1. __Simple building blocks__  
+Foundation for a "communication OS" that is infinitely upgradeable and can handle any data  
+1. __Collaboration and communication__  
+Tooling for sharing apps and data and collaborative improvement of underlying infrastructure  
+1. __Personalization__  
+Consumerization of apps and sharing   
+1. __Bigger and Better Datasets__  
+Public and private datastores grow with more precise and varied data   
+1. __Better AI__  
+Improved ML algorithms working on better data, user-owned and controlled  
+
+
+#### Stage 1 (Foundation) 
+
+~~New filesystem (node = file+directory+validation)~~  
+~~New routing layer~~  
+~~Multi-platform support (cloud, browser, iOS/Android, RPi3)~~  
+
+
+#### Stage 2 (App Platform) 
+
+~~Cloud Default App~~  
+~~Browser app: app store and editor~~  
+Browser/Mobile apps: social sharing (private, customizable twitter/fb)  
+Browser/Mobile/IoT apps: automation  
+Mobile/Iot development guides  
+
+
+#### Stage 3 (Scalability and Adoption) 
+
+Platform change support (platform-as-upgradeable)  
+Security reviews  
+
+
+
 
 
 ### Team 
@@ -34,7 +108,7 @@ We're a small team with great advisors, based in San Francisco.
 
 ### History 
 
-Nick began working on the idea for Second in 2013. In early 2018 alpha software was released with the core concepts and fundamentals (identity, language, hosting). 
+We began working on the idea for Second in 2013. In early 2018 alpha software was released with the core concepts and fundamentals (identity, language, hosting). 
 
 
 ### Contact 
@@ -46,13 +120,30 @@ Requests may be directed to nicholas.a.reed at gmail
 
 Icon created by iconomania from Noun Project
 
-    `
+----  
 
+
+
+`;
 
     return (
       <div className="container">
+        {/*
         <div className="content">
           <ReactMarkdown source={md1} />
+        </div>
+        */}
+        <div className="columns">
+          <div className="column is-3">
+            <div className="content">
+              <ReactMarkdown source={menu1} />
+            </div>
+          </div>
+          <div className="column is-9">
+            <div className="content">
+              <ReactMarkdown source={md2} renderers={renderers} />
+            </div>
+          </div>
         </div>
       </div>
     )

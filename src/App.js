@@ -27,6 +27,7 @@ import LaunchCloudAdvanced from './components/common/LaunchCloudAdvanced'
 
 // help/collaborate page
 import Help from './components/help/Help'
+import Developers from './components/common/Developers'
 
 // language (eventually on-chain)  
 import LanguageDashboard from './components/language/dashboard/Dashboard'
@@ -216,6 +217,7 @@ class App extends Component {
               <DefaultLayout path="/keys" component={KeyHome}/>
 
 
+              <DefaultLayout path="/developers" component={Developers}/>
               <DefaultLayout path="/about" component={Help}/>
 
             </Switch>
