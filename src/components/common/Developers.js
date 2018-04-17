@@ -49,6 +49,7 @@ class DevelopersComponent extends Component {
 - [Terminology](#terminology-and-architecture)  
 - [Identity and Routing](#identity-and-routing)  
 - [Shared Data](#shared-data)  
+  - [Examples](#examples-of-common-shared-data-typesschemas)  
 
     `;
 
@@ -281,7 +282,9 @@ Optional encryption:
 
 ### Shared Data   
 
-Nodes to be shared have a specific structure with additional information. \`node\` schema: 
+Syndicating or sharing data through Second is simple: when you "ask" another Second to store data for you, you also provide permissions for who else can access that data. You can easily see where your data is syndicated to, and revoke or add permissions on an ongoing basis. 
+
+Shared data has a specific structure with additional information. \`node\` schema: 
 
     {
       "type": "shared_node:Qmdsfjl", 
@@ -298,7 +301,7 @@ Nodes to be shared have a specific structure with additional information. \`node
 
 \`type\`: "shared_node" is the default sharing type that will include permissions and syndication  
 \`data\`: this is the data you actually want shared, or that was requested to be syndicated    
-\`data._id\`: this is the path to the source ID; answers who created the data and where is it located   
+\`data._id\`: this is the path to the source ID; describes who created the data and where is it located   
 \`data.type\`: type of data being shared   
 \`data.name\`: usually random    
 \`data.data\`: data of the data.type   
@@ -311,16 +314,16 @@ Nodes that are expected to be attached:
 - \`permissions:Qmdsfjl\` (who can access this shared data)  
 - \`syndicatedTo:Qmsfj20j293\` (where I shared the data to)  
 
-Syndicating data through Second is simple: when you "ask" another Second to store data for you, you also provide permissions for who else can access that data. 
+
 
 
 #### Examples of Common Shared Data Types/Schemas  
 
 
 __Posts__  
-Commonly used for microblogging or simple one-to-many messaging. 
+Commonly used for microblogging or simple one-to-many messaging.   
 Type: \`post:Qmsf89j23fs\`  
-Data: 
+Example Data: 
 \`\`\`json 
 {
   "message": "test1",
@@ -335,9 +338,9 @@ Data:
 
 
 __Relationships__ 
-Sometimes you want relationships to be validated and available publicly, and sometimes they can be one-sided (following) and with or without permission required. This model is intended to handle multiple relationship types 
+Sometimes you want relationships to be validated and available publicly, and sometimes they can be one-sided (following) and with or without permission required. This model is intended to handle multiple relationship models.    
 Type: \`verified_relationship:Qmsklfdjfsf4\`  
-Data: 
+Example Data: 
 \`\`\`json 
 {
   
@@ -347,19 +350,41 @@ Data:
 
 
 __Metadata Overlays__   
-Add your own metadata to any type of addressable content (URLs, internal Ids, etc. Setup to be easily searchable
+Add your own metadata to any type of addressable content (URLs, internal Ids, etc). Designed to be easily searchable through multiple lookup dimensions.   
 Type: \`metadata_overlay:Qmdsfj9jsffs\`  
-Data: 
+Example Data: 
 \`\`\`json 
 {
-  "content_address_type": "url",
-  "content_address": "http://espn.com/
+  "overlay_of": {
+    "type" : "metadata_url:Qmdsfljsdfldsjf",
+    "data" : {
+      "search_dimensions": {
+        "exact": "http://getasecond.com/" ,
+        "exactAlt": ["http://getasecond.com/","http://www.getasecond.com/"],
+        "domain": "getasecond.com",
+        "domainAlt": ["getasecond.com", "www.getasecond.com"],
+        "matchOnMisc": ["xyz"]
+      }
+    }
+  },
+  "overlay_data": {
+    "type" : "string:Qmdsfjfljs",
+    "data" : "comment about overlay"
+  },
+  "createdAt":"utcTimestamp"
 }
 \`\`\`
 
 
 
+----
 
+#### Need More Information? 
+
+We have ambitious plans for Second and would love your input! We're writing documentation, improving scalability and security, and building sample apps. [Contact us](/about#contact)! 
+
+&nbsp;
+&nbsp;
 
 
 
