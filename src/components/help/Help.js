@@ -113,7 +113,7 @@ We began working on the idea for Second in 2013. In early 2018 alpha software wa
 
 ### Contact 
 
-Requests may be directed to nicholas.a.reed at gmail 
+Requests may be directed to nick@getasecond.com 
 
 
 ---- 

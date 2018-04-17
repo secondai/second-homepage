@@ -48,6 +48,7 @@ class DevelopersComponent extends Component {
 - [Getting Started](#getting-started)  
 - [Terminology](#terminology-and-architecture)  
 - [Identity and Routing](#identity-and-routing)  
+- [Shared Data](#shared-data)  
 
     `;
 
@@ -116,59 +117,9 @@ Deleting the parent node will delete all child nodes (no orphans allowed).
 Unique index for \`name\` and \`nodeId\` effectively means no duplicate names on same-level.  
 
 
+__Types__  
 
-__Identity__  
-
-Also referred to as _username, routing layer, configuration,_ or _trust_.   
-
-See \`Identity and Routing\` section below. 
-
-
-__Second__ 
-
-A Second is a combination of the \`filesystem\` and \`platform\`; when a request comes in, a code \`node\` is loaded from the filesystem and executed in the JavaScript VM on the platform. 
-
-
-__Sharing Data__  
-
-Nodes to be shared have a specific structure with additional information. \`node\` schema: 
-
-    {
-      type: "shared_node:Qmdsfjl", 
-      data: {
-        _id: "idtestid:nick@test:542349823048923", 
-        type: "post:Qmsfljsdfff2398", 
-        name: "cb310245-3391-4d54-a7a0-69d4691c6c97", 
-        data: {}
-        v: 1, 
-        signer: "idtest:nick@test",
-        sig: "kljf23oi230fj230f923="
-      }
-    }
-
-\`type\`: "shared_node" is the default sharing type that will include permissions and syndication  
-\`data\`: this is the data you actually want shared, or that was requested to be syndicated    
-\`data._id\`: this is the path to the source ID; answers who created the data and where is it located   
-\`data.type\`: type of data being shared   
-\`data.name\`: usually random    
-\`data.data\`: data of the data.type   
-\`data.v\`: version of this source data, 1-index   
-\`data.signer\`: author of the shared content, used for requesting the Public Key to verify the signature   
-\`data.sig\`: base64 signature by data.signer of JSON.stringify({_id, name, type, data, v, signer})  
-
-
-Nodes that are expected to be attached:  
-- \`permissions:Qmdsfjl\` (who can access this shared data)  
-- \`syndicatedTo:Qmsfj20j293\` (where I shared the data to)  
-
-Syndicating data through Second is simple: when you "ask" another Second to store data for you, you also provide permissions for who else can access that data. 
-
-
-
-
-__More Type Information__  
-
-Types defines the schema of the data for a node. The \`type\` is written in the format: 
+Types defines the schema of the data for a node. A \`type\` is written in the format: 
 
 \`"simple_name":"IPFS_hash"\`  such as \`folder:Qmsfljdsfjk\`
 
@@ -195,6 +146,26 @@ The IPFS hash will resolve to a node of type \`language\` that contains data in 
 \`\`\`
 
 
+
+
+
+
+
+__Identity__  
+
+Also referred to as _username, routing layer, configuration,_ or _trust_.   
+
+See \`Identity and Routing\` section below. 
+
+
+__Second__ 
+
+A Second is a combination of the \`filesystem\` and \`platform\`; when a request comes in, a code \`node\` is loaded from the filesystem and executed in the JavaScript VM on the platform. 
+
+
+__Shared Data__  
+
+Sharing data is 90% of the fun! See [Shared Data](#shared-data) below. 
 
 
 
@@ -231,28 +202,30 @@ Viewing the public address of \`tellar\` ([view](https://horizon.stellar.org/acc
 
 
 \`\`\`json
-thresholds: {
-  low_threshold: 2,
-  med_threshold: 2,
-  high_threshold: 2
-},
-signers: [
-  {
-    public_key: "GBJ3R3AJL7T6JL34HSWPQJMBG73BNWXSAYVGVXULDXJG3WAJWB6PSALQ",
-    weight: 1,
-    key: "GBJ3R3AJL7T6JL34HSWPQJMBG73BNWXSAYVGVXULDXJG3WAJWB6PSALQ",
-    type: "ed25519_public_key"
+{
+  "thresholds": {
+    "low_threshold": 2,
+    "med_threshold": 2,
+    "high_threshold": 2
   },
-  {
-    public_key: "GCJ2UTBPMZJJN6YX4DIFL33Y2LJJEWZEVUEN4HHI5WNSKYEXANVXFJL3",
-    weight: 1,
-    key: "GCJ2UTBPMZJJN6YX4DIFL33Y2LJJEWZEVUEN4HHI5WNSKYEXANVXFJL3",
-    type: "ed25519_public_key"
+  "signers": [
+    {
+      "public_key": "GBJ3R3AJL7T6JL34HSWPQJMBG73BNWXSAYVGVXULDXJG3WAJWB6PSALQ",
+      "weight": 1,
+      "key": "GBJ3R3AJL7T6JL34HSWPQJMBG73BNWXSAYVGVXULDXJG3WAJWB6PSALQ",
+      "type": "ed25519_public_key"
+    },
+    {
+      "public_key": "GCJ2UTBPMZJJN6YX4DIFL33Y2LJJEWZEVUEN4HHI5WNSKYEXANVXFJL3",
+      "weight": 1,
+      "key": "GCJ2UTBPMZJJN6YX4DIFL33Y2LJJEWZEVUEN4HHI5WNSKYEXANVXFJL3",
+      "type": "ed25519_public_key"
+    }
+  ],
+  data: {
+    "|second": "base64-ipfs-hash-1",
+    "nick|second" : "base64-ipfs-hash-2"
   }
-],
-data: {
-  "|second": "base64-ipfs-hash-1",
-  "nick|second" : "base64-ipfs-hash-2"
 }
 \`\`\`
 
@@ -280,16 +253,16 @@ When I want to lookup the sub-user \`nick\` on the main identity \`acmecorp\` (a
 __second__ - points to an External Identity Node for connecting to a Second  
 \`\`\`json
 {
-  type: "external_identity:Qmf2389hf9sdsfkdjn9fh8w9eh923",
-  data: {
-    publicKey: "-----BEGIN PUBLIC KEY----- MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAJMXKHxgvILqEaf/g6sZIEpylNdb2I0j wOgXOrXEesbrCdggin2o/X8YAd5+QVbCz9bwTOLexdIpp9tNkn+HlmUCAwEAAQ== -----END PUBLIC KEY-----"
+  "type": "external_identity:Qmf2389hf9sdsfkdjn9fh8w9eh923",
+  "data": {
+    "publicKey": "-----BEGIN PUBLIC KEY----- MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAJMXKHxgvILqEaf/g6sZIEpylNdb2I0j wOgXOrXEesbrCdggin2o/X8YAd5+QVbCz9bwTOLexdIpp9tNkn+HlmUCAwEAAQ== -----END PUBLIC KEY-----"
   },
-  nodes: [
+  "nodes": [
     {
-      type: "external_identity_connect_method:Qmsdkfjewiojfiwoefjdionfsoief",
-      data: {
-        method: "http",
-        connection: "https://teacher.second.ngrok.io/ai"
+      "type": "external_identity_connect_method:Qmsdkfjewiojfiwoefjdionfsoief",
+      "data": {
+        "method": "http",
+        "connection": "https://teacher.second.ngrok.io/ai"
       }
     }
   ]
@@ -299,10 +272,93 @@ __second__ - points to an External Identity Node for connecting to a Second
 Potential additional routing:   
 __web__ - used by Second Browser for loading websites, replacing current domain names (adds \`x-second-forward\` header).  
 __email__ - points to an alternate email address to use for communication   
-__license-xyz__ - license for doing something 
+__license-xyz__ - license for doing something  
 
 Optional encryption:   
 - routes can be encrypted with the username, or a pre-shared secret  
+
+
+
+### Shared Data   
+
+Nodes to be shared have a specific structure with additional information. \`node\` schema: 
+
+    {
+      "type": "shared_node:Qmdsfjl", 
+      "data": {
+        "_id": "idtestid:nick@test:542349823048923", 
+        "type": "post:Qmsfljsdfff2398", 
+        "name": "cb310245-3391-4d54-a7a0-69d4691c6c97", 
+        "data": {...},
+        "v": 1, 
+        "signer": "idtest:nick@test",
+        "sig": "kljf23oi230fj230f923="
+      }
+    }
+
+\`type\`: "shared_node" is the default sharing type that will include permissions and syndication  
+\`data\`: this is the data you actually want shared, or that was requested to be syndicated    
+\`data._id\`: this is the path to the source ID; answers who created the data and where is it located   
+\`data.type\`: type of data being shared   
+\`data.name\`: usually random    
+\`data.data\`: data of the data.type   
+\`data.v\`: version of this source data, 1-index   
+\`data.signer\`: author of the shared content, used for requesting the Public Key to verify the signature   
+\`data.sig\`: base64 signature by data.signer of JSON.stringify({_id, name, type, data, v, signer})  
+
+
+Nodes that are expected to be attached:  
+- \`permissions:Qmdsfjl\` (who can access this shared data)  
+- \`syndicatedTo:Qmsfj20j293\` (where I shared the data to)  
+
+Syndicating data through Second is simple: when you "ask" another Second to store data for you, you also provide permissions for who else can access that data. 
+
+
+#### Examples of Common Shared Data Types/Schemas  
+
+
+__Posts__  
+Commonly used for microblogging or simple one-to-many messaging. 
+Type: \`post:Qmsf89j23fs\`  
+Data: 
+\`\`\`json 
+{
+  "message": "test1",
+  "in_reply_to": "id_of_post",
+  "thread_ref":"uuid_of_thread",
+  "author":"same_as_signer",
+  "mentioned": ["identity_mentioned"],
+  "createdAt":"utcTimestamp",
+}
+\`\`\`
+
+
+
+__Relationships__ 
+Sometimes you want relationships to be validated and available publicly, and sometimes they can be one-sided (following) and with or without permission required. This model is intended to handle multiple relationship types 
+Type: \`verified_relationship:Qmsklfdjfsf4\`  
+Data: 
+\`\`\`json 
+{
+  
+}
+\`\`\`
+
+
+
+__Metadata Overlays__   
+Add your own metadata to any type of addressable content (URLs, internal Ids, etc. Setup to be easily searchable
+Type: \`metadata_overlay:Qmdsfj9jsffs\`  
+Data: 
+\`\`\`json 
+{
+  "content_address_type": "url",
+  "content_address": "http://espn.com/
+}
+\`\`\`
+
+
+
 
 
 
