@@ -24,23 +24,31 @@ class WelcomeComponent extends Component {
 
   render() {
 
+    // We're building a platform to __easily create and share personalized apps and data__. 
+
+// How did we get here? 
+
+// You probably started using facebook because it was new, or because it had a good UI, or because your friends used it. Now, as the platfom makes mistakes, you can't switch because wherever you import your data would have different APIs and UIs, and none of your friends would see your new posts. This is a giant moat that facebook has built around its business to prevent competitors from existing. 
+
+
+// How does Second help? 
+
+// We see the current setup as a problem of _portability_ and _interoperability_; if it was easy to own and manage your data, identity, and connections, then when a 3rd party (facebook) lost your trust you could easily stop using them. This would incentivize 3rd parties to always act in your best interest. Second makes it easy for anyone to have this level of control over their data. 
+
+// Second is designed to be the best programming tool ever; the framework gets rid of 95% of the obstacles new and experienced developers face when 
+
     let md1 = `
 ### Welcome to Second 
 
-We're building a platform to __easily create and share personalized apps and data__. 
+Knowledge is Power. 
+
+Centralization of knowledge (facebook, twitter, google, et al.) leads to centralization of power. 
+
+Second destroys centralization, and gives power back to individuals. 
+
 
 ---- 
 
-Second combines development, hosting, and distribution into a single platform that you run on your own server. It is useful to think of it as __your personal App and Data Platform that travels with you__. It is _entirely decentralized_ and made up of a few key components: 
-
-_Usernames_  
-The routing/identity/config layer is stored on the blockchain (the Stellar network). This enables "pretty" usernames to be permanently owned and controlled by a user or organization (cannot be siezed or MITM'd). 
-
-_Shareable Data_  
-A simple and expressive data structure is used to store and transfer all information: every file is also a directory, and the file's type defines a schema stored on IPFS. When exchanging data between users, the file's type is used to define how to handle its data. Data can be stored in a nicely-querable form inside your own Second, own syndicated (with permissions) to any other Second. 
-
-_Platforms_  
-Deployment to any platform (cloud, browser, mobile, IoT) of a new or updated app is instant, and you completely control what goes into your Second. 
 
 &nbsp;
 
