@@ -59,10 +59,9 @@ class HelpComponent extends Component {
 
 ### Technical Roadmap 
 
+Second aims to be a personalized AI, acting as your middleman/negotiator/guardian whenever you want to view or exchange data. For example, if you want to see photos from friends, your Second fetches all the data from disparate sources and displays photos to you, in whichever format you prefer (list, album, etc). 
 
-The final goal of Second is to be a personalized, not awkward to use, AI for you or your business, acting as a middleman/negotiator/guardian whenever you want to view or exchange data. For example, if Sally wants to see messages sent from Bob, her Second would handle requesting messages from Bob's Second and displaying them in the list-like UI that Sally prefers. 
-
-In order to provide a non-awkward experience, the AI needs to know everything about you, and with that level of trust, you should be in complete control of the AI. This is the roadmap to building that AI. 
+In order to provide a personalized experience, your AI needs to know everything about you, and with that level of trust, you should be in complete control of the AI. This is the roadmap to building that AI.  
 
 1. __Simple building blocks__  
 Foundation for a "communication OS" that is infinitely upgradeable and can handle any data  

@@ -56,7 +56,7 @@ class DevelopersComponent extends Component {
     let md1 = `
 ### Developer Documentation 
 
-Second is a self-hosted platform for building personalized apps. Second eliminates many of the common obstacles for app development (infrastructure, APIs, authentication, data storage, deployment, distribution) and helps you focus on building amazing interfaces. 
+Second is a self-hosted platform for a person or business to manage all their data and interfaces. Second eliminates many of the common obstacles for app development (infrastructure, APIs, authentication, data storage, deployment, distribution), resulting in broader distribution and a lower barrier for entry to new programmers (100x easier + 100x more programmers = faster iteration). 
 
 ---- 
 `;
