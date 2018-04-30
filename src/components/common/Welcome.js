@@ -37,14 +37,21 @@ class WelcomeComponent extends Component {
 
 // Second is designed to be the best programming tool ever; the framework gets rid of 95% of the obstacles new and experienced developers face when 
 
+
+// Knowledge is Power. 
+
+// Centralization of knowledge (facebook, twitter, google, et al.) leads to centralization of power. 
+
+// Second destroys centralization, and gives power back to individuals. 
+
     let md1 = `
 ### Welcome to Second 
 
-Knowledge is Power. 
+An internal Brain for your company. 
 
-Centralization of knowledge (facebook, twitter, google, et al.) leads to centralization of power. 
+Replace Slack, Yammer, and all your internal knowledge-sharing apps with a simple, extendable, platform. 
 
-Second destroys centralization, and gives power back to individuals. 
+Custom UIs for employees, permissioned data access, and infinitely extensible. 
 
 
 ---- 
