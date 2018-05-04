@@ -47,11 +47,7 @@ class WelcomeComponent extends Component {
     let md1 = `
 ### Welcome to Second 
 
-An internal Brain for your company. 
-
-Replace Slack, Yammer, and all your internal knowledge-sharing apps with a simple, extendable, platform. 
-
-Custom UIs for employees, permissioned data access, and infinitely extensible. 
+Second is a new communication and development platform that empowers users. It makes building privacy-respecting, personalized apps easy. 
 
 
 ---- 
@@ -68,7 +64,7 @@ let md2 = `
 
 #### What's Next? 
 
-We have ambitious plans for Second and would love your input! We're writing documentation, improving scalability and security, and building sample apps. See our [technical roadmap](/about#technical-roadmap) or [contact us](/about#contact). 
+We have ambitious plans for Second and would love your input! We're writing documentation, improving scalability and security, and building examples. See our [technical roadmap](/about#technical-roadmap) or [contact us](/about#contact). 
 
 You can also [launch your own (alpha software) Second](/cloud) today! 
 
