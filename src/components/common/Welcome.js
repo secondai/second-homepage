@@ -47,7 +47,9 @@ class WelcomeComponent extends Component {
     let md1 = `
 ### Welcome to Second 
 
-Second is a new communication and development platform that empowers users. It makes building privacy-respecting, personalized apps easy. 
+Second is a new communication and development platform that empowers users. 
+
+Easily and quickly build user-friendly, privacy-respecting, personalized apps. 
 
 
 ---- 
