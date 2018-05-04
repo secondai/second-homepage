@@ -194,10 +194,11 @@ class App extends Component {
           <Router>
             <Switch>
               <DefaultLayout exact path="/" component={Welcome}/>
-              
+              <DefaultLayout path="/developers" component={Developers}/>
+              <DefaultLayout path="/about" component={Help}/>
+
               {/*<DefaultLayout path="/cloud-advanced" component={LaunchCloudAdvanced}/>
               <DefaultLayout path="/cloud" component={LaunchCloud}/>
-              */}
 
               <DefaultLayout path="/language/:languageSlug" component={LanguageView}/>
               <DefaultLayout path="/language" component={LanguageDashboard}/>
@@ -216,10 +217,8 @@ class App extends Component {
 
               <DefaultLayout path="/keys/add" component={KeyAdd}/>
               <DefaultLayout path="/keys" component={KeyHome}/>
+              */}
 
-
-              <DefaultLayout path="/developers" component={Developers}/>
-              <DefaultLayout path="/about" component={Help}/>
 
             </Switch>
           </Router>
