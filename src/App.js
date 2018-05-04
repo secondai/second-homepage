@@ -22,8 +22,8 @@ import {AuthProvider} from './components/common/Auth'
 // Pages and Layouts
 import DefaultLayout from './components/common/Layout'
 import Welcome from './components/common/Welcome'
-import LaunchCloud from './components/common/LaunchCloud'
-import LaunchCloudAdvanced from './components/common/LaunchCloudAdvanced'
+// import LaunchCloud from './components/common/LaunchCloud'
+// import LaunchCloudAdvanced from './components/common/LaunchCloudAdvanced'
 
 // help/collaborate page
 import Help from './components/help/Help'
@@ -195,8 +195,9 @@ class App extends Component {
             <Switch>
               <DefaultLayout exact path="/" component={Welcome}/>
               
-              <DefaultLayout path="/cloud-advanced" component={LaunchCloudAdvanced}/>
+              {/*<DefaultLayout path="/cloud-advanced" component={LaunchCloudAdvanced}/>
               <DefaultLayout path="/cloud" component={LaunchCloud}/>
+              */}
 
               <DefaultLayout path="/language/:languageSlug" component={LanguageView}/>
               <DefaultLayout path="/language" component={LanguageDashboard}/>
